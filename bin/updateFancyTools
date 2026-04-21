@@ -1,0 +1,12 @@
+RC_DIR=~/src/fancy_tools
+
+cd "$SRC_DIR" || { echo "Erreur : $SRC_DIR introuvable."; exit 1; }
+
+branch=$(git rev-parse --abbrev-ref HEAD)
+if [ "$branch" != "main" ]; then
+    git checkout main || { echo "Impossible de basculer sur main."; exit 1; }
+fi
+
+git pull
+cp "$SRC_DIR/bin/updateFancyTools" ~/bin/
+echo "Mise à jour terminée."
