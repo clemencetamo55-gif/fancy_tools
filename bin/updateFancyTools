@@ -1,3 +1,4 @@
+
 RC_DIR=~/src/fancy_tools
 
 cd "$SRC_DIR" || { echo "Erreur : $SRC_DIR introuvable."; exit 1; }
